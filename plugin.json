@@ -1,0 +1,24 @@
+{
+    "id": "desktopLyrics",
+    "name": "Desktop Lyrics",
+    "description": "在 Arch Linux 的 niri 桌面中，于 DMS 导航栏显示 Spotify 同步歌词",
+    "version": "1.0.0",
+    "author": "ming",
+    "type": "composite",
+    "capabilities": ["daemon", "dankbar-widget", "desktop-widget", "lyrics"],
+    "icon": "lyrics",
+    "components": {
+        "daemon": "./LyricsDaemon.qml",
+        "widget": "./LyricsBarWidget.qml",
+        "desktop": "./LyricsDesktopWidget.qml"
+    },
+    "settings": "./LyricsSettings.qml",
+    "requires_dms": ">=1.5.0",
+    "dependencies": ["python3", "opencc"],
+    "permissions": [
+        "settings_read",
+        "settings_write",
+        "process",
+        "network"
+    ]
+}
